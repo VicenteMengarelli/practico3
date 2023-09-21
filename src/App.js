@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Titulo from './componentes/Titulo.js';
+import Formulario from './componentes/Formulario.js';
+import Inicio from './componentes/Inicio';
+import Juego from './componentes/Juego';
+import React from 'react';
+import { useState } from "react";
 
 function App() {
+  const [nombreUsuario, setNombreUsuario] = useState(''); 
+  console.log(nombreUsuario)
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Titulo />
+      {nombreUsuario === "" ? (
+        <>
+          <Formulario funcion={setNombreUsuario} nombreUsuario={nombreUsuario} />
+          <Inicio />
+        </>
+      ) : (
+        <Juego cambiarNombre={setNombreUsuario} nombreUsuario={nombreUsuario} />
+      )}
+
     </div>
   );
 }

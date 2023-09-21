@@ -1,70 +1,176 @@
-# Getting Started with Create React App
+# Piedra - Papel - Tijera 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto trata sobre el clásico juego de "piedra, papel o tijera" ejecutado en html que permite al usuario jugar partidas contra la computadora.
+ 
+## Instrucciones 📋 
 
-## Available Scripts
+<code><pre>
 
-In the project directory, you can run:
+### 1. Iniciar el juego:
 
-### `npm start`
+* Ingresa tu nombre en el campo de texto.
+* Haz clic en el botón **"Iniciar"**.
+* Si dejas el campo vacío, verás la alerta **"Por favor, ingrese su nombre"** y el juego no comenzará.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Comienza la partida:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Una vez validado tu nombre, se iniciará el juego.
+* Verás tu nombre y el del rival que será **"Computadora"** en la pantalla.
+* La puntuación comenzará en 0 para ambos jugadores.
 
-### `npm test`
+### 3. Jugando una ronda:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* En la pantalla se mostrarán dos imágenes de manos enfrentadas listas para iniciar la partida.
+* Debajo, encontrarás tres botones para seleccionar tu jugada: Piedra, Papel o Tijeras.
+* Haz clic en el botón de tu elección para iniciar la ronda.
 
-### `npm run build`
+### 4. Ganador de la ronda:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Después de tu elección, la computadora hará su jugada automáticamente y de manera aleatoria.
+* Se determinará el ganador según las reglas clásicas: Piedra vence a Tijeras, Tijeras vencen a Papel, Papel vence a Piedra.
+* La puntuación se actualizará según el resultado de la ronda:
+    * El ganador de la ronda sumará un punto a su marcador.  
+    * En caso de empate el marcador no se verá modificado.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 5. Ganar el juego:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* El jugador que primero logré sumar 3 puntos será el ganador.
 
-### `npm run eject`
+### 6. Volver a jugar:
+* En caso de que una partida no haya sido suficiente aparecerá un botón en la parte inferior de la pantalla que te permitirá comenzar un nuevo juego.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### **¡A jugar y que gane el mejor!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</pre></code>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Ejecutando las pruebas ⚙️
 
-## Learn More
+Antes de lanzar el juego, es fundamental asegurarse de que todas las funcionalidades operen sin problemas. A continuación, se detallan los resultados de las pruebas realizadas:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. Inicio del Juego sin ingresar nombre:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* __Prueba:__ Al hacer clic en el botón "Iniciar" sin ingresar un nombre.
+* __Resultado Esperado:__ Debería aparecer una alerta solicitando ingresar un nombre.
+* __Resultado Obtenido:__ La alerta se muestra correctamente. _("Por favor, Ingrese su nombre")_   
 
-### Code Splitting
+### 2. Iniciar Juego con Nombre:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* __Prueba:__ Ingresar un nombre en el campo de texto y hacer clic en "Iniciar".
+* __Resultado Esperado:__ El juego debe comenzar, mostrando el nombre a la izquierda del marcador.
+* __Resultado Obtenido:__ El juego inicia correctamente y el nombre elegido se visualiza correctamente a la izquierda del marcador.   
 
-### Analyzing the Bundle Size
+### 3. Selección de Jugada:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* __Prueba:__ Hacer clic en uno de los tres botones de jugada (Piedra, Papel, Tijeras) después de iniciar el juego.
+* __Resultado Esperado:__ Deben mostrarse en pantalla las elecciones hechas por el jugador y la computadora, junto con las imágenes correspondientes y el detalle de ambas jugadas por escrito.
+* __Resultado Obtenido:__ Las elecciones, imágenes y registro de jugadas se presentan como se espera.   
 
-### Making a Progressive Web App
+#### Pruebas:✒️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* __Elección:__ Selecciono el botón con la imagen de la piedra.    
+__Resultado Esperado:__ Se debe mostrar la imagen correspondiente a la piedra y el detalle por escrito de lo elegido.    
+__Resultado Obtenido:__ Aparece correctamente la selección realizada y el detalle por escrito.        
 
-### Advanced Configuration
+* __Elección:__ Selecciono el botón con la imagen del papel.    
+__Resultado Esperado:__ Se debe mostrar la imagen correspondiente al  papel y el detalle por escrito de lo elegido.    
+__Resultado Obtenido:__ Aparece correctamente la selección realizada y el detalle por escrito.     
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* __Elección:__ Selecciono el botón con la imagen de la tijera.    
+__Resultado Esperado:__ Se debe mostrar la imagen correspondiente a la tijera y el detalle por escrito de lo elegido.    
+__Resultado Obtenido:__ Aparece correctamente la selección realizada y el detalle por escrito.   
 
-### Deployment
+* __Elección:__ Selecciono el botón con la imagen del papel.    
+__Resultado Esperado:__ Se debe mostrar la imagen correspondiente al papel y el detalle por escrito de lo elegido.    
+__Resultado Obtenido:__ Aparece correctamente la selección realizada y el detalle por escrito.   
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* __Elección:__ Selecciono el botón con la imagen de la tijera.   
+__Resultado Esperado:__ Se debe mostrar la imagen correspondiente a la tijera y el detalle por escrito de lo elegido.   
+__Resultado Obtenido:__ Aparece correctamente la selección realizada y el detalle por escrito.       
 
-### `npm run build` fails to minify
+* __Elección:__ Selecciono el botón con la imagen de la piedra.   
+__Resultado Esperado:__ Se debe mostrar la imagen correspondiente a la piedra y el detalle por escrito de lo elegido.   
+__Resultado Obtenido:__ Aparece correctamente la selección realizada y el detalle por escrito.              
+         
+### 4. Puntuación y Resultados:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_Recodatorios:_
+
+```
+    Se determinará el ganador según las reglas clásicas: Piedra vence a Tijeras, Tijeras vencen a Papel, Papel vence a Piedra.
+
+    La elección que haga la computadora no se puede saber de antemano ya que se realiza en el momento de manera automática y aleatoria por lo que no se puede anticipar ningún resultado.
+
+    En caso de que alguno de los participantes logren acumular 3 puntos se dará por finalizada la partida informando por pantalla al vencedor correspondiente.
+```
+
+* __Prueba:__ Realizar varias rondas de juego y verificar cómo se actualiza la puntuación.
+* __Resultado Esperado:__ El marcador debe actualizarse correctamente para reflejar los puntos ganados por el jugador y la computadora, al momento en que cualquier competidor llegue a 3 puntos el juego debe finalizar.
+* __Resultado Obtenido:__ La puntuación se actualiza adecuadamente y se informa de manera correcta por pantalla.
+
+#### Prueba N1:✒️
+
+* __Elección:__ Selecciono el botón con la imagen de la piedra.   
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.   
+__Resultado Obtenido:__ La computadora elige piedra y por pantalla se informa correctamente de un empate, no hay cambios en el marcador (0-0).   
+
+* __Elección:__ Selecciono el botón con la imagen del papel.   
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.   
+__Resultado Obtenido:__ La computadora elige piedra y por pantalla se informa correctamente la victoria del usuario, sumando el punto correspondiende en el marcador (1-0).    
+
+* __Elección:__ Selecciono el botón con la imagen de la tijera.    
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige papel y por pantalla se informa correctamente la victoria del usuario, sumando el punto correspondiende en el marcador (2-0).        
+
+* __Elección:__ Selecciono el botón con la imagen del papel.    
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige tijera y por pantalla se informa correctamente la victoria de la computadora, sumando el punto correspondiende en el marcador (2-1).         
+       
+* __Elección:__ Selecciono el botón con la imagen de la tijera.   
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige piedra y por pantalla se informa correctamente la victoria de la computadora, sumando el punto correspondiende en el marcador (2-2).                 
+
+* __Elección:__ Selecciono el botón con la imagen de la piedra.    
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige tijera y por pantalla se informa correctamente la victoria del usuario, sumando el punto correspondiende en el marcador (3-2) y la finalización de la partida dando como ganador al usuario a través del mensaje de victoria correspondiente.       
+
+
+#### Prueba N2:✒️
+        
+* __Elección:__ Selecciono el botón con la imagen del papel.    
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige piedra y por pantalla se informa correctamente la victoria del usuario, sumando el punto correspondiende en el marcador (1-0).    
+>
+* __Elección:__ Selecciono el botón con la imagen del papel.    
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige papel y por pantalla se informa correctamente de un empate, no hay cambios en el marcador (1-0).      
+
+* __Elección:__ Selecciono el botón con la imagen de la tijera.    
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige piedra y por pantalla se informa correctamente la victoria de la computadora, sumando el punto correspondiende en el marcador (1-1).        
+
+* __Elección:__ Selecciono el botón con la imagen de la piedra.    
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige piedra y por pantalla se informa correctamente de un empate, no hay cambios en el marcador (1-1).       
+       
+* __Elección:__ Selecciono el botón con la imagen de la tijera.   
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige piedra y por pantalla se informa correctamente la victoria de la computadora, sumando el punto correspondiende en el marcador (1-2).               
+
+* __Elección:__ Selecciono el botón con la imagen de la piedra.    
+__Resultado Esperado:__ Según la elección de la computadora se debe informar si hay un ganador o un empate.    
+__Resultado Obtenido:__ La computadora elige papel y por pantalla se informa correctamente la victoria de la computadora, sumando el punto correspondiende en el marcador (1-3) y la finalización de la partida dando como ganadora a la computadora a través del mensaje de victoria correspondiente.         
+    
+### 5. Volver a jugar
+
+* __Prueba:__ Hacer clic en el botón **"Volver a jugar"** y comprobar que se reinicie el juego para iniciar una nueva partida contra la computadora.
+* __Resultado Esperado:__ Al hacer click el juego tiene que estar disponible y limpio para empezar una nueva partida desde 0 contra la computadora manteniendo el nombre de usuario elegido. 
+* __Resultado Obtenido:__ El juego se reinicia de manera correcta, los nombres se mantienen, los marcadores vuelven a 0 y las imágenes iniciales se restablecen, desaparece de manera esperada el botón para volver a jugar, desaparece el mensaje informando de la última jugada realizada y desaparece el mensaje de victoria que apareció al final de la partida anterior, vuelven a mostrarse los botones para seleccionar la próxima jugada dejando todo listo y a disposición para iniciar una partida nueva.
+
+## Autor ⌨️
+
+* **Vicente Mengarelli** -> [GitHub](https://github.com/VicenteMengarelli)
+
+
+
+

@@ -1,38 +1,319 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Courier New', Courier, monospace;
+  line-height: 1.5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  --color-a: #dfbc23;
+  --color-b: #111650;
+  --color-c: #c71c94;
+  --color-d: #fdfff3;
+}
+
+body {
+  background-color: var(--color-b);
+  color: var(--color-d);
+}
+
+h1 {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 1.5rem;
+  background-color: var(--color-d);
+  color: var(--color-b);
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+}
+
+
+main {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem 1rem 2rem;
+  text-align: center;
+}
+
+.instrucciones {
+  display:flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.instrucciones2 {
+  display:flex;
+  justify-content: center;
+  margin: 2rem;
+}
+.player {
+  font-size: larger;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.inicio {
+  width:auto;
+  transform: scale(90%);
+}
+
+.marcador {
+  margin: auto;
+  width: 90%;
+  background-color: var(--color-c);
+  padding: 5rem 10rem;
+  border-radius: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--color-d);
+  justify-content: center;
+}
+
+.opcion {
+  width: 100px;
+  height: 100px;
+  padding: 0.5rem;
+}
+
+.marcador .nombre {
+  width: 33.333%;
+  position: absolute;
+  color: (var(--color-a));
+  background-color: var(--color-b);
+  line-height: 1;
+  padding: .5rem;
+  border-radius: .5rem;
+  border: 2px solid var(--color-c);
+  font-size: 1.5rem;
+}
+
+.marcador .nombreJugador {
+  right: 63%;
+  overflow: hidden;
+}
+
+.marcador .nombreComputadora {
+  left: 63%;
+  overflow: hidden;
+}
+
+.marcador .puntos {
+  position: absolute;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-d);
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 6px;
+}
+
+.elegiTuArma h2 {
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 1rem;
+}
+
+.armas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.arma {
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.arma:hover{
+  background-color:rgb(44, 104, 216);
+  transform: scale(1.1);
+}
+
+.mensaje {
+  margin: .5rem 2rem 2rem 2rem;
+}
+
+.mensaje .eleccion {
+  color: var(--color-b);
+  background-color: var(--color-d);
+  border-radius: 0.25rem;
+  padding-inline: 0.4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn {
+  border: 0;
+  line-height: 1;
+  background-color: rgb(27, 157, 218);
+  color:rgb(255, 255, 255) ;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+.nombre {
+  border: 0;
+  padding-inline-start: .35rem;
+  border-radius: 0.3rem;
+  margin-left: .3rem;
+  line-height: 1;
+}
+.startButton {
+  background-color:rgba(238, 238, 238, 0.76);
+  font-family: 'Times New Roman', Times, serif;
+  border: 0;
+  line-height: 1;
+  font-size: 1rem;
+  font-weight: 900;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.1rem;
+  border-radius: 0.25rem;
+  margin: 1rem;
+  padding-inline: 0.5rem;
+  box-shadow: 4px 4px 4px 1px #00000077
+}
+
+.btn:hover {
+  background-color:rgb(38, 177, 231);
+  transform: scale(1.03);
+}
+.startButton:hover {background-color: rgb(255, 255, 255);}
+
+
+.festejo {
+  margin: auto;
+  width: 70%;
+  animation: festejo 2s ease 0s 1 normal forwards;
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: var(--color-c);
+  color: var(--color-d);
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: auto;
+  width: 70%;
+}
+
+@keyframes festejo {
+0% {
+  transform: scale3d(1, 1, 1);
+}
+
+30% {
+  transform: scale3d(1.25, 0.75, 1);
+}
+
+40% {
+  transform: scale3d(0.75, 1.25, 1);
+}
+
+50% {
+  transform: scale3d(1.15, 0.85, 1);
+}
+
+65% {
+  transform: scale3d(0.95, 1.05, 1);
+}
+
+75% {
+  transform: scale3d(1.05, 0.95, 1);
+}
+
+100% {
+  transform: scale3d(1, 1, 1);
+}
+}
+
+
+.respuesta {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.respuesta img {
+  height: 250px;
+  width: 250px;
+  align-items: center;
+  justify-content: center;
+  animation: myAnim 800ms ease 0s 1 normal none;
+}
+
+@keyframes myAnim {
+0% {
+  animation-timing-function: ease-in;
+  opacity: 1;
+  transform: translateY(-45px);
+}
+
+24% {
+  opacity: 1;
+}
+
+40% {
+  animation-timing-function: ease-in;
+  transform: translateY(-24px);
+}
+
+65% {
+  animation-timing-function: ease-in;
+  transform: translateY(-12px);
+}
+
+82% {
+  animation-timing-function: ease-in;
+  transform: translateY(-6px);
+}
+
+93% {
+  animation-timing-function: ease-in;
+  transform: translateY(-4px);
+}
+
+25%,
+55%,
+75%,
+87% {
+  animation-timing-function: ease-out;
+  transform: translateY(0px);
+}
+
+100% {
+  animation-timing-function: ease-out;
+  opacity: 1;
+  transform: translateY(0px);
+}
+}
+
+.disabled {
+  display:none;
+}
+
+.visibility {
+  visibility: hidden;
 }
