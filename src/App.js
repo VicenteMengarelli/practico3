@@ -8,7 +8,6 @@ import { useState } from "react";
 
 function App() {
   const [nombreUsuario, setNombreUsuario] = useState(''); 
-  console.log(nombreUsuario)
   
   return (
     <div className="App">
@@ -19,7 +18,7 @@ function App() {
           <Inicio />
         </>
       ) : (
-        <Juego cambiarNombre={setNombreUsuario} nombreUsuario={nombreUsuario} />
+        <Juego nombreUsuario={nombreUsuario} />
       )}
 
     </div>
